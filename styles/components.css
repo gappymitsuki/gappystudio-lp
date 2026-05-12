@@ -1,0 +1,387 @@
+/* ============================================
+   Components — Gappy Studio
+   ============================================ */
+
+/* ---- Container ---- */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+.container--narrow {
+  max-width: 1200px;
+}
+
+.container--wide {
+  max-width: 1600px;
+}
+
+/* ---- Section ---- */
+.section {
+  position: relative;
+  padding-block: var(--section-padding-y);
+  isolation: isolate;
+}
+
+.section--no-bottom { padding-bottom: 0; }
+.section--no-top { padding-top: 0; }
+.section--tight { padding-block: clamp(60px, 8vw, 100px); }
+
+/* ============================================
+   Buttons
+   ============================================ */
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 18px 32px;
+  font-family: var(--font-gothic);
+  font-weight: 400;
+  font-size: 0.875rem;
+  letter-spacing: 0.18em;
+  line-height: 1;
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  transition: all var(--dur-base) var(--ease-out-expo);
+  white-space: nowrap;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.btn__arrow {
+  display: inline-block;
+  transition: transform var(--dur-base) var(--ease-out-expo);
+}
+
+.btn:hover .btn__arrow {
+  transform: translateX(6px);
+}
+
+/* Gold Filled */
+.btn--gold {
+  background: var(--color-accent-gold);
+  color: var(--color-text-on-gold);
+  border: 1px solid var(--color-accent-gold);
+}
+
+.btn--gold:hover {
+  background: var(--color-accent-gold-bright);
+  border-color: var(--color-accent-gold-bright);
+  box-shadow: var(--glow-gold-medium);
+  transform: translateY(-2px);
+}
+
+/* Outline Gold */
+.btn--outline {
+  background: transparent;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-strong);
+}
+
+.btn--outline:hover {
+  border-color: var(--color-accent-gold);
+  color: var(--color-accent-gold);
+  box-shadow: var(--glow-gold-subtle);
+  transform: translateY(-2px);
+}
+
+/* Ghost / Text Link */
+.btn--ghost {
+  padding: 8px 0;
+  background: transparent;
+  color: var(--color-accent-gold);
+  border: none;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+}
+
+.btn--ghost:hover {
+  border-bottom-color: var(--color-accent-gold);
+}
+
+/* Sizes */
+.btn--sm { padding: 12px 22px; font-size: 0.75rem; }
+.btn--lg { padding: 22px 40px; font-size: 0.9375rem; }
+
+/* ============================================
+   Group / Layout helpers
+   ============================================ */
+
+.stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.stack--xs > * + * { margin-top: var(--space-1); }
+.stack--sm > * + * { margin-top: var(--space-2); }
+.stack--md > * + * { margin-top: var(--space-3); }
+.stack--lg > * + * { margin-top: var(--space-4); }
+.stack--xl > * + * { margin-top: var(--space-5); }
+.stack--xxl > * + * { margin-top: var(--space-6); }
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.cluster--lg { gap: var(--space-4); }
+.cluster--xl { gap: var(--space-5); }
+
+.split {
+  display: grid;
+  gap: var(--space-7);
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .split {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+}
+
+/* ============================================
+   Section Header (Eyebrow + H2 + Sub)
+   ============================================ */
+
+.section-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 880px;
+  margin-bottom: var(--space-6);
+}
+
+.section-header--center {
+  text-align: center;
+  margin-inline: auto;
+  align-items: center;
+}
+
+.section-header__subtitle {
+  margin-top: var(--space-2);
+  font-family: var(--font-gothic);
+  font-size: var(--fs-body);
+  color: var(--color-text-secondary);
+  line-height: 1.9;
+  max-width: 720px;
+}
+
+/* ============================================
+   Trust Line (●  separated items)
+   ============================================ */
+
+.trust-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px 28px;
+  font-family: var(--font-inter);
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+}
+
+.trust-line__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.trust-line__dot {
+  width: 4px;
+  height: 4px;
+  background: var(--color-accent-gold);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ============================================
+   Glass Panel
+   ============================================ */
+
+.glass {
+  background: var(--color-glass);
+  backdrop-filter: blur(40px) saturate(120%);
+  -webkit-backdrop-filter: blur(40px) saturate(120%);
+  border: 1px solid var(--color-border-medium);
+  border-radius: var(--radius-md);
+  position: relative;
+}
+
+.glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--color-accent-gold-dim), transparent 40%, transparent 60%, var(--color-accent-gold-dim));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* ============================================
+   Card
+   ============================================ */
+
+.card {
+  position: relative;
+  background: linear-gradient(135deg, var(--color-bg-secondary), var(--color-bg-tertiary));
+  border: var(--hairline);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  transition: all var(--dur-slow) var(--ease-out-expo);
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(201, 168, 76, 0.06), transparent 60%);
+  opacity: 0;
+  transition: opacity var(--dur-slow) var(--ease-out-expo);
+  pointer-events: none;
+}
+
+.card:hover {
+  border-color: var(--color-border-strong);
+  transform: translateY(-6px);
+  box-shadow: var(--glow-gold-subtle);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* ============================================
+   Image Frame (placeholder-safe)
+   ============================================ */
+
+.img-frame {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-bg-secondary);
+  border: var(--hairline);
+  border-radius: var(--radius-md);
+  isolation: isolate;
+}
+
+.img-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(201, 168, 76, 0.08), transparent 60%),
+    radial-gradient(ellipse at 70% 80%, rgba(201, 168, 76, 0.04), transparent 60%),
+    linear-gradient(135deg, #0a0a0a, #141414);
+  z-index: -1;
+}
+
+.img-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.img-frame--contain img { object-fit: contain; }
+
+/* ============================================
+   Number / Index marker
+   ============================================ */
+
+.index-marker {
+  font-family: var(--font-cormorant);
+  font-weight: 400;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  color: var(--color-accent-gold);
+  font-style: italic;
+}
+
+.index-marker--lg {
+  font-size: 1.5rem;
+}
+
+/* ============================================
+   Decorative prism background
+   ============================================ */
+
+.prism-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.prism-bg::before,
+.prism-bg::after {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.4;
+}
+
+.prism-bg::before {
+  top: -10%;
+  left: -10%;
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.15), transparent 70%);
+}
+
+.prism-bg::after {
+  bottom: -10%;
+  right: -10%;
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.1), transparent 70%);
+}
+
+/* ============================================
+   Scroll-reveal base
+   ============================================ */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 1100ms var(--ease-out-expo),
+    transform 1100ms var(--ease-out-expo);
+  will-change: transform, opacity;
+}
+
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+[data-reveal-delay="100"] { transition-delay: 100ms; }
+[data-reveal-delay="200"] { transition-delay: 200ms; }
+[data-reveal-delay="300"] { transition-delay: 300ms; }
+[data-reveal-delay="400"] { transition-delay: 400ms; }
+[data-reveal-delay="500"] { transition-delay: 500ms; }
+[data-reveal-delay="600"] { transition-delay: 600ms; }
+[data-reveal-delay="700"] { transition-delay: 700ms; }
+[data-reveal-delay="800"] { transition-delay: 800ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
