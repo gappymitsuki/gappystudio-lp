@@ -11,14 +11,14 @@ body {
   color: var(--color-text-primary);
 }
 
-/* ---- Eyebrow (English uppercase label) ---- */
+/* ---- Eyebrow (English uppercase label — Chakra Petch / Cyan by default) ---- */
 .eyebrow {
-  font-family: var(--font-inter);
-  font-weight: 500;
+  font-family: var(--font-mono);
+  font-weight: 400;
   font-size: var(--fs-eyebrow);
-  letter-spacing: 0.32em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--color-accent-gold);
+  color: var(--color-accent-cyan);
   display: inline-flex;
   align-items: center;
   gap: 14px;
@@ -32,8 +32,8 @@ body {
   display: inline-block;
   width: 24px;
   height: 1px;
-  background: var(--color-accent-gold);
-  opacity: 0.6;
+  background: currentColor;
+  opacity: 0.7;
 }
 
 .eyebrow--no-line::before,
@@ -41,37 +41,40 @@ body {
 
 .eyebrow--single::after { display: none; }
 
-/* ---- Headings ---- */
+/* Gold variant for hospitality contexts */
+.eyebrow--gold { color: var(--color-accent-gold); }
+
+/* ---- Headings (Cinematic Monolith — Gothic Light) ---- */
 .h-display {
-  font-family: var(--font-mincho);
-  font-weight: 500;
-  font-size: var(--fs-display);
-  line-height: 1.1;
+  font-family: var(--font-gothic);
+  font-weight: 300;
+  font-size: clamp(2.5rem, 6vw + 1rem, 6.5rem);
+  line-height: 1.3;
   letter-spacing: 0.02em;
   color: var(--color-text-primary);
 }
 
 .h1 {
-  font-family: var(--font-mincho);
-  font-weight: 500;
+  font-family: var(--font-gothic);
+  font-weight: 300;
   font-size: var(--fs-h1);
-  line-height: 1.18;
-  letter-spacing: 0.03em;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
 }
 
 .h2 {
-  font-family: var(--font-mincho);
-  font-weight: 500;
-  font-size: var(--fs-h2);
-  line-height: 1.25;
-  letter-spacing: 0.04em;
+  font-family: var(--font-gothic);
+  font-weight: 300;
+  font-size: clamp(2rem, 4vw + 1rem, 5rem);
+  line-height: 1.35;
+  letter-spacing: 0.03em;
 }
 
 .h3 {
-  font-family: var(--font-mincho);
-  font-weight: 500;
+  font-family: var(--font-gothic);
+  font-weight: 400;
   font-size: var(--fs-h3);
-  line-height: 1.35;
+  line-height: 1.4;
   letter-spacing: 0.04em;
 }
 
@@ -132,18 +135,32 @@ body {
   color: var(--color-text-tertiary);
 }
 
-/* ---- Numeric Display ---- */
+/* ---- Numeric Display (Chakra Petch for data feel) ---- */
 .numeric {
-  font-family: var(--font-cormorant);
-  font-weight: 400;
+  font-family: var(--font-mono);
+  font-weight: 500;
   font-size: var(--fs-numeric);
   line-height: 1;
-  letter-spacing: -0.02em;
-  color: var(--color-accent-gold-bright);
+  letter-spacing: -0.01em;
+  color: var(--color-accent-cyan);
   font-variant-numeric: tabular-nums lining-nums;
 }
 
+.numeric--gold { color: var(--color-accent-gold-bright); }
+
+/* ---- Mono label (Chakra Petch) ---- */
+.mono-label {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 0.875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
 /* ---- Text Utilities ---- */
+.text-cyan { color: var(--color-accent-cyan); }
+.text-cyan-bright { color: var(--color-accent-cyan-bright); }
 .text-gold { color: var(--color-accent-gold); }
 .text-gold-bright { color: var(--color-accent-gold-bright); }
 .text-primary { color: var(--color-text-primary); }
@@ -157,7 +174,15 @@ body {
 .italic { font-style: italic; }
 .uppercase { text-transform: uppercase; }
 
-/* ---- Gold underline accent ---- */
+/* ---- Underline accents ---- */
+.cyan-rule {
+  display: inline-block;
+  width: 80px;
+  height: 1px;
+  background: var(--color-accent-cyan);
+  margin: 12px 0;
+}
+
 .gold-rule {
   display: inline-block;
   width: 40px;

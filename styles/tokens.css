@@ -9,24 +9,36 @@
   --color-bg-tertiary: #141414;
   --color-bg-elevated: #181818;
 
-  /* ---- Color: Accent (Matte Gold Leaf) ---- */
-  --color-accent-gold: #C9A84C;
+  /* ---- Color: Accent — Primary (Cyan / AI · Data) ---- */
+  --color-accent-cyan: #0BBFCA;
+  --color-accent-cyan-bright: #2FD8E3;
+  --color-accent-cyan-dim: #087C84;
+  --color-accent-cyan-deep: #04494E;
+
+  /* ---- Color: Accent — Secondary (Matte Gold / Hospitality) ---- */
+  --color-accent-gold: #C9A961;
   --color-accent-gold-bright: #D4B560;
   --color-accent-gold-dim: #8A7335;
   --color-accent-gold-deep: #5C4B22;
 
   /* ---- Color: Text ---- */
-  --color-text-primary: #F5F0E8;
-  --color-text-secondary: #B8B0A4;
-  --color-text-tertiary: #6B6560;
-  --color-text-muted: #4A4540;
+  --color-text-primary: #F5F5F7;
+  --color-text-secondary: #A8A8AD;
+  --color-text-tertiary: #6B6B70;
+  --color-text-muted: #3F3F44;
+  --color-text-on-accent: #0A0A0A;
   --color-text-on-gold: #0A0A0A;
 
+  /* ---- Color: Divider ---- */
+  --color-divider: #1F1F1F;
+
   /* ---- Color: Borders ---- */
-  --color-border-subtle: rgba(201, 168, 76, 0.15);
-  --color-border-medium: rgba(201, 168, 76, 0.25);
-  --color-border-strong: rgba(201, 168, 76, 0.40);
-  --color-border-faint: rgba(245, 240, 232, 0.06);
+  --color-border-subtle: rgba(245, 245, 247, 0.08);
+  --color-border-medium: rgba(245, 245, 247, 0.16);
+  --color-border-strong: rgba(245, 245, 247, 0.28);
+  --color-border-faint: rgba(245, 245, 247, 0.05);
+  --color-border-cyan: rgba(11, 191, 202, 0.40);
+  --color-border-gold: rgba(201, 169, 97, 0.30);
 
   /* ---- Color: Glass / Overlay ---- */
   --color-glass: rgba(20, 20, 20, 0.6);
@@ -34,16 +46,20 @@
   --color-overlay: rgba(10, 10, 10, 0.7);
 
   /* ---- Color: Glow ---- */
-  --glow-gold-subtle: 0 0 40px rgba(201, 168, 76, 0.08);
-  --glow-gold-medium: 0 0 60px rgba(201, 168, 76, 0.15);
-  --glow-gold-strong: 0 0 80px rgba(201, 168, 76, 0.25);
-  --glow-gold-inset: inset 0 0 30px rgba(201, 168, 76, 0.05);
+  --glow-cyan-subtle: 0 0 40px rgba(11, 191, 202, 0.10);
+  --glow-cyan-medium: 0 0 60px rgba(11, 191, 202, 0.18);
+  --glow-cyan-strong: 0 0 80px rgba(11, 191, 202, 0.28);
+  --glow-gold-subtle: 0 0 40px rgba(201, 169, 97, 0.08);
+  --glow-gold-medium: 0 0 60px rgba(201, 169, 97, 0.15);
+  --glow-gold-strong: 0 0 80px rgba(201, 169, 97, 0.25);
+  --glow-gold-inset: inset 0 0 30px rgba(201, 169, 97, 0.05);
 
   /* ---- Typography: Families ---- */
   --font-mincho: "Noto Serif JP", "Shippori Mincho", "游明朝", "Yu Mincho", serif;
   --font-cormorant: "Cormorant Garamond", "Playfair Display", "Times New Roman", serif;
   --font-gothic: "Noto Sans JP", "游ゴシック", "Yu Gothic", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-inter: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "Chakra Petch", "Share Tech Mono", "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
   /* ---- Typography: Fluid Sizes ---- */
   --fs-eyebrow: 0.75rem;
@@ -74,16 +90,19 @@
   --container-padding: clamp(24px, 5vw, 80px);
   --section-padding-y: clamp(80px, 12vw, 160px);
 
-  /* ---- Radius (minimal) ---- */
-  --radius-xs: 2px;
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-xl: 16px;
+  /* ---- Radius (Cinematic Monolith — strictly 0) ---- */
+  --radius-xs: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
 
   /* ---- Borders ---- */
-  --hairline: 1px solid var(--color-border-subtle);
+  --hairline: 1px solid var(--color-divider);
+  --hairline-subtle: 1px solid var(--color-border-subtle);
   --hairline-strong: 1px solid var(--color-border-strong);
+  --hairline-cyan: 1px solid var(--color-border-cyan);
+  --hairline-gold: 1px solid var(--color-border-gold);
 
   /* ---- Easing & Duration ---- */
   --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
